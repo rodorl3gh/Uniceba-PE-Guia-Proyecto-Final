@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía del Trabajo Final, Parte 1 de Planeación Estratégica: plan estratégico empresarial, PDF y exposición.">
+<title>Trabajo Final · Plan Estratégico | UNICEBA</title>
+<style>
+:root{
+  --navy:#0A1F3F;
+  --navy-2:#152E54;
+  --gold:#C8963E;
+  --gold-soft:#E8D3A8;
+  --vanilla:#F5F0E6;
+  --white:#ffffff;
+  --gray-50:#f7f8fa;
+  --gray-100:#f0f1f3;
+  --gray-200:#e2e4e8;
+  --gray-300:#cdd0d5;
+  --gray-500:#6b7280;
+  --gray-700:#374151;
+  --gray-900:#111827;
+  --slate:#8a9bb0;
+  --muted-red:#b08a8a;
+  --shadow:0 1px 4px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.03);
+  --radius:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  color:var(--gray-700);
+  background:var(--gray-50);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  max-width:100%;
+}
+img,video{max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;border-radius:4px;
+}
+p,li,h1,h2,h3{overflow-wrap:break-word}
+
+/* ===== Progress ===== */
+.progress{
+  position:fixed;top:0;left:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--gold),#e0b96a);
+  z-index:200;
+}
+
+/* ===== Cover ===== */
+.cover{
+  min-height:100vh;min-height:100svh;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 55%,var(--navy) 100%);
+  color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  padding:3.5rem 1.4rem;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;top:-30%;right:-12%;
+  width:min(700px,85vw);height:min(700px,85vw);border-radius:50%;
+  background:radial-gradient(circle,rgba(200,150,62,.10) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cover::after{
+  content:'';position:absolute;bottom:-35%;left:-18%;
+  width:min(520px,70vw);height:min(520px,70vw);border-radius:50%;
+  background:radial-gradient(circle,rgba(200,150,62,.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cover-inner{
+  position:relative;z-index:1;width:100%;max-width:780px;
+  display:flex;flex-direction:column;min-height:78vh;min-height:78svh;
+  text-align:center;
+}
+.cover-top{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  flex-wrap:wrap;margin-bottom:auto;
+}
+.uni-mark{
+  font-size:.82rem;font-weight:700;letter-spacing:.55em;
+  color:var(--gold);text-transform:uppercase;
+}
+.cover-tag{
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  border:1px solid rgba(200,150,62,.35);
+  padding:.35rem .9rem;
+}
+.cover-main{margin:3rem 0}
+.eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:1.1rem;
+}
+.cover h1{
+  font-size:clamp(2rem,5.4vw,3.4rem);
+  line-height:1.08;font-weight:800;letter-spacing:-.02em;
+  margin-bottom:1rem;
+}
+.cover h1 span{color:var(--gold)}
+.cover-sub{
+  max-width:620px;margin:0 auto 1.8rem;
+  font-size:clamp(.92rem,2vw,1.05rem);
+  color:rgba(255,255,255,.72);line-height:1.6;
+}
+.cover-pills{
+  display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.cover-pills span{
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold-soft);
+  border:1px solid rgba(200,150,62,.35);
+  background:rgba(255,255,255,.04);
+  padding:.45rem 1rem;border-radius:999px;
+}
+.cover-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.85rem 2rem;border-radius:999px;
+  background:var(--gold);color:var(--navy);
+  font-weight:800;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+}
+.cover-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,150,62,.28)}
+.cover-foot{
+  margin-top:auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
+  font-size:.72rem;color:rgba(255,255,255,.5);
+}
+.cover-foot span:last-child{color:var(--gold-soft)}
+
+/* ===== Topbar ===== */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gray-200);
+}
+.topbar-inner{
+  max-width:980px;margin:0 auto;padding:.65rem 1.2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;
+}
+.brand{
+  font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--navy);text-decoration:none;white-space:nowrap;
+}
+.navlinks{display:flex;gap:.35rem 1rem;flex-wrap:wrap;align-items:center}
+.navlinks a{
+  font-size:.74rem;color:var(--gray-500);text-decoration:none;
+  font-weight:600;letter-spacing:.02em;
+  padding:.2rem 0;border-bottom:2px solid transparent;
+  white-space:nowrap;
+}
+.navlinks a:hover{color:var(--navy);border-bottom-color:var(--gold)}
+
+/* ===== Layout ===== */
+.wrap{max-width:980px;margin:0 auto;padding:1.6rem 1.2rem 3rem}
+.section{
+  background:var(--white);border-radius:var(--radius);
+  padding:2.1rem 2rem;box-shadow:var(--shadow);
+  margin-bottom:1.5rem;scroll-margin-top:88px;
+}
+.kicker{
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);font-weight:800;margin-bottom:.45rem;
+}
+.section h2{
+  font-size:clamp(1.35rem,3vw,1.7rem);line-height:1.2;
+  color:var(--gray-900);font-weight:800;letter-spacing:-.01em;
+  margin-bottom:.45rem;
+}
+.lead{color:var(--gray-500);font-size:.95rem;max-width:74ch;margin-bottom:1.2rem}
+.section h3{
+  font-size:1.02rem;color:var(--navy);font-weight:700;
+  margin:1.4rem 0 .5rem;
+}
+.section h4{
+  font-size:.9rem;color:var(--navy);font-weight:700;margin:.9rem 0 .3rem;
+}
+.section p{margin-bottom:.75rem}
+.section ul,.section ol{padding-left:1.35rem;margin-bottom:.8rem}
+.section li{margin-bottom:.4rem;font-size:.9rem}
+.section li b{color:var(--navy)}
+
+/* ===== Index ===== */
+.index-section{background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%)}
+.index-grid{
+  display:grid;gap:.7rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));
+  margin-top:1rem;
+}
+.index-card{
+  display:flex;gap:.8rem;align-items:flex-start;
+  padding:.85rem .9rem;border:1px solid var(--gray-200);
+  border-radius:12px;text-decoration:none;background:var(--white);
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.index-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 18px rgba(10,31,63,.06)}
+.index-num{
+  flex:0 0 30px;height:30px;border-radius:8px;background:var(--navy);
+  color:var(--white);font-weight:800;font-size:.78rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.index-card h4{font-size:.83rem;color:var(--navy);margin:0 0 .15rem;font-weight:700}
+.index-card p{font-size:.75rem;color:var(--gray-500);margin:0;line-height:1.45}
+
+/* ===== Callouts ===== */
+.hook{
+  background:var(--vanilla);border-left:4px solid var(--gold);
+  padding:.9rem 1.1rem;margin:.8rem 0 1.1rem;
+  font-size:.9rem;color:var(--navy);font-weight:600;font-style:italic;
+  border-radius:0 8px 8px 0;
+}
+.note{
+  background:rgba(10,31,63,.035);border-left:4px solid var(--navy);
+  padding:.8rem 1rem;margin:.9rem 0;font-size:.86rem;color:var(--navy);
+  border-radius:0 8px 8px 0;
+}
+.warn{
+  background:#fbf7f7;border-left:4px solid var(--muted-red);
+  padding:.8rem 1rem;margin:.9rem 0;font-size:.86rem;color:#6f3535;
+  border-radius:0 8px 8px 0;
+}
+.gold-box{
+  background:var(--vanilla);border:1px solid var(--gold-soft);
+  padding:1rem 1.1rem;margin:1rem 0;border-radius:10px;
+  font-size:.88rem;color:var(--navy);
+}
+.gold-box b{color:var(--navy)}
+
+/* ===== Grids / cards ===== */
+.grid{
+  display:grid;gap:.8rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));
+  margin:.9rem 0;
+}
+.mini{
+  background:var(--gray-50);border:1px solid var(--gray-200);
+  border-radius:12px;padding:.9rem 1rem;
+}
+.mini h4{font-size:.82rem;color:var(--navy);margin:0 0 .25rem;font-weight:700}
+.mini p{font-size:.8rem;color:var(--gray-500);margin:0;line-height:1.5}
+.mini .tag{
+  display:inline-block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);font-weight:800;margin-bottom:.25rem;
+}
+.fact{
+  display:flex;flex-direction:column;gap:.15rem;
+  background:var(--white);border:1px solid var(--gray-200);
+  border-top:3px solid var(--gold);border-radius:10px;
+  padding:.75rem .85rem;
+}
+.fact b{font-size:.8rem;color:var(--navy);font-weight:700}
+.fact span{font-size:.72rem;color:var(--gray-500);line-height:1.4}
+
+/* ===== Pills ===== */
+.pills{display:flex;gap:.45rem;flex-wrap:wrap;margin:.6rem 0}
+.pill{
+  font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--navy);background:var(--vanilla);
+  border:1px solid var(--gold-soft);border-radius:999px;
+  padding:.3rem .7rem;font-weight:700;
+}
+
+/* ===== Timeline ===== */
+.timeline{
+  display:grid;gap:.7rem;margin:1rem 0 .4rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));
+}
+.t-item{
+  background:var(--white);border:1px solid var(--gray-200);
+  border-top:3px solid var(--gold);border-radius:10px;padding:.8rem .9rem;
+}
+.t-item .date{
+  font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);font-weight:800;display:block;margin-bottom:.2rem;
+}
+.t-item h4{font-size:.82rem;color:var(--navy);margin:0 0 .15rem}
+.t-item p{font-size:.75rem;color:var(--gray-500);margin:0;line-height:1.45}
+
+/* ===== Section map ===== */
+.map{
+  display:grid;gap:.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+  margin:.8rem 0;
+}
+.map-row{
+  display:flex;gap:.6rem;align-items:flex-start;
+  background:var(--gray-50);border:1px solid var(--gray-200);
+  border-radius:9px;padding:.55rem .65rem;
+}
+.map-row .m-num{
+  flex:0 0 24px;height:24px;border-radius:6px;background:var(--navy);
+  color:var(--white);font-size:.68rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.map-row p{font-size:.76rem;color:var(--gray-700);margin:0;line-height:1.4}
+.map-row p b{color:var(--navy)}
+
+/* ===== Formula ===== */
+.formula{
+  background:var(--navy);color:var(--white);
+  border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;
+  text-align:center;
+}
+.formula .fp{
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);font-weight:800;margin-bottom:.35rem;
+}
+.formula code{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:clamp(.9rem,2.4vw,1.12rem);font-weight:700;
+  color:var(--white);letter-spacing:.01em;
+  overflow-wrap:anywhere;white-space:normal;
+}
+.formula small{display:block;margin-top:.4rem;font-size:.72rem;color:rgba(255,255,255,.6)}
+
+/* ===== Rubric ===== */
+.rubric-card{
+  border:1px solid var(--gray-200);border-radius:12px;
+  margin:1rem 0;overflow:hidden;background:var(--white);
+}
+.rubric-head{
+  display:flex;gap:.7rem;align-items:flex-start;
+  padding:.8rem .9rem;background:var(--gray-50);
+  border-bottom:1px solid var(--gray-200);
+}
+.rubric-num{
+  flex:0 0 30px;height:30px;border-radius:8px;background:var(--navy);
+  color:var(--white);font-weight:800;font-size:.78rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.rubric-head h4{font-size:.86rem;color:var(--navy);margin:0;font-weight:700;line-height:1.3}
+.rubric-head p{font-size:.75rem;color:var(--gray-500);margin:.15rem 0 0;line-height:1.4}
+.rubric-pts{
+  margin-left:auto;flex:0 0 auto;
+  font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);font-weight:800;white-space:nowrap;
+}
+.levels{display:flex;flex-direction:column}
+.level{
+  padding:.65rem .9rem;border-left:4px solid var(--gray-300);
+  border-bottom:1px solid var(--gray-100);
+}
+.level:last-child{border-bottom:none}
+.level .lv{
+  display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:800;margin-bottom:.12rem;
+}
+.level p{font-size:.84rem;margin:0;line-height:1.5;color:var(--gray-700)}
+.level.l3{background:var(--vanilla);border-left-color:var(--gold)}
+.level.l3 .lv{color:#8a6420}
+.level.l2{background:var(--gray-50);border-left-color:var(--slate)}
+.level.l2 .lv{color:#4b5a6b}
+.level.l1{background:#fbf7f7;border-left-color:var(--muted-red)}
+.level.l1 .lv{color:#7a3b3b}
+
+/* ===== Checklist ===== */
+.checklist{display:flex;flex-direction:column;gap:.1rem;margin:.7rem 0}
+.check{
+  display:flex;gap:.65rem;align-items:flex-start;
+  padding:.5rem .2rem;border-bottom:1px solid var(--gray-100);
+  cursor:pointer;font-size:.84rem;line-height:1.45;
+}
+.check:last-child{border-bottom:none}
+.check input{
+  flex:0 0 auto;width:17px;height:17px;margin-top:.18rem;
+  accent-color:var(--navy);cursor:pointer;
+}
+.check span{color:var(--gray-700);transition:color .2s}
+.check input:checked + span{color:var(--gray-300);text-decoration:line-through}
+
+/* ===== Footer / top ===== */
+.footer{
+  text-align:center;padding:1.2rem 1.2rem 2rem;
+  font-size:.72rem;color:var(--gray-500);font-style:italic;
+  border-top:1px solid var(--gray-200);max-width:980px;margin:0 auto;
+}
+.to-top{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:150;
+  width:44px;height:44px;border-radius:50%;border:none;
+  background:var(--navy);color:var(--white);font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 8px 22px rgba(10,31,63,.22);
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .25s,transform .25s;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:var(--navy-2)}
+
+/* ===== Responsive ===== */
+@media(max-width:720px){
+  html{scroll-padding-top:16px}
+  .topbar{position:static}
+  .cover{padding:2.6rem 1.1rem}
+  .cover-main{margin:2rem 0}
+  .cover-top{justify-content:center}
+  .cover-foot{justify-content:center;text-align:center}
+  .wrap{padding:1.1rem .75rem 2.2rem}
+  .section{padding:1.35rem 1.05rem;border-radius:13px;margin-bottom:1.1rem;scroll-margin-top:16px}
+  .section h2{font-size:1.3rem}
+  .lead{font-size:.88rem}
+  .section li{font-size:.85rem}
+  .topbar-inner{padding:.55rem .75rem}
+  .navlinks{gap:.25rem .7rem}
+  .navlinks a{font-size:.7rem}
+  .rubric-head{flex-wrap:wrap}
+  .rubric-pts{margin-left:40px}
+  .cover-pills span{font-size:.62rem;padding:.35rem .75rem}
+}
+@media(max-width:420px){
+  body{font-size:15px}
+  .cover h1{font-size:1.85rem}
+  .cover-sub{font-size:.85rem}
+  .brand{font-size:.7rem}
+  .navlinks a{font-size:.66rem}
+}
+
+@media print{
+  .topbar,.progress,.to-top,.cover-btn{display:none!important}
+  body{background:#fff;font-size:11pt}
+  .cover{min-height:auto;padding:2.5rem 1.5rem;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .wrap{max-width:100%;padding:0}
+  .section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid;margin-bottom:1rem}
+  .index-card,.mini,.t-item,.rubric-card{page-break-inside:avoid}
+  a{text-decoration:none;color:inherit}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===== COVER ===== -->
+<header class="cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="uni-mark">UNICEBA</div>
+      <div class="cover-tag">Trabajo Final · 2026</div>
+    </div>
+
+    <div class="cover-main">
+      <div class="eyebrow">Planeación Estratégica · IGI738</div>
+      <h1>Plan estratégico<br><span>empresarial</span></h1>
+      <p class="cover-sub">Parte 1 del trabajo final: integra el diagnóstico del Avance 1 y construye la estrategia, los objetivos, la implementación y el control de una empresa real.</p>
+      <div class="cover-pills">
+        <span>PDF · 60%</span>
+        <span>Exposición · 40%</span>
+        <span>Entrega · 14 nov · 12:00 pm</span>
+      </div>
+      <a class="cover-btn" href="#indice">Comenzar</a>
+    </div>
+
+    <div class="cover-foot">
+      <span>Licenciatura en Negocios Internacionales</span>
+      <span>Julio · Diciembre 2026</span>
+      <span>Ing. Rodolfo Ramírez López</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TOPBAR ===== -->
+<nav class="topbar" aria-label="Navegación del trabajo final">
+  <div class="topbar-inner">
+    <a class="brand" href="#indice">Trabajo Final</a>
+    <div class="navlinks">
+      <a href="#reto">El reto</a>
+      <a href="#entregables">Entregables</a>
+      <a href="#estructura">PDF</a>
+      <a href="#rubrica-pdf">Rúbrica PDF</a>
+      <a href="#expo">Exposición</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ===== ÍNDICE ===== -->
+  <section class="section index-section" id="indice">
+    <div class="kicker">Índice</div>
+    <h2>Tu ruta de trabajo</h2>
+    <p class="lead">La actividad tiene dos partes: el documento que entregas y la exposición que defiendes. Avanza en orden o salta al bloque que necesites.</p>
+
+    <div class="index-grid">
+      <a class="index-card" href="#reto"><span class="index-num">1</span><div><h4>El reto</h4><p>Qué se te pide y cómo se conecta con el Avance 1.</p></div></a>
+      <a class="index-card" href="#entregables"><span class="index-num">2</span><div><h4>Entregables y fechas</h4><p>PDF, exposición y fecha única de entrega.</p></div></a>
+      <a class="index-card" href="#estructura"><span class="index-num">3</span><div><h4>Estructura del PDF</h4><p>Los 9 capítulos y sus preguntas guía.</p></div></a>
+      <a class="index-card" href="#escritura"><span class="index-num">4</span><div><h4>Cómo escribir</h4><p>La fórmula de cada capítulo y la matriz de coherencia.</p></div></a>
+      <a class="index-card" href="#formato"><span class="index-num">5</span><div><h4>Formato</h4><p>Tipografía, márgenes y requisitos del documento.</p></div></a>
+      <a class="index-card" href="#rubrica-pdf"><span class="index-num">6</span><div><h4>Rúbrica del PDF</h4><p>5 criterios y 3 niveles de desempeño.</p></div></a>
+      <a class="index-card" href="#expo"><span class="index-num">7</span><div><h4>Exposición</h4><p>Guion de 5 bloques y consejos para defender.</p></div></a>
+      <a class="index-card" href="#rubrica-expo"><span class="index-num">8</span><div><h4>Rúbrica de la exposición</h4><p>5 criterios y 3 niveles de desempeño.</p></div></a>
+      <a class="index-card" href="#calificacion"><span class="index-num">9</span><div><h4>Cómo se califica</h4><p>Fórmula, reglas de evaluación y errores frecuentes.</p></div></a>
+      <a class="index-card" href="#checklist"><span class="index-num">10</span><div><h4>Checklist final</h4><p>Lo que debes revisar antes de entregar.</p></div></a>
+    </div>
+
+    <div class="gold-box"><b>Regla de oro:</b> todo el documento debe contar una sola historia. Si el diagnóstico detecta una debilidad, la estrategia debe atenderla; si la estrategia propone diferenciación, los indicadores deben medir diferenciación y el presupuesto debe financiarla.</div>
+  </section>
+
+  <!-- ===== 1. EL RETO ===== -->
+  <section class="section" id="reto">
+    <div class="kicker">01 · El reto</div>
+    <h2>Tu plan, completo y defendible</h2>
+    <p class="lead">Este trabajo no empieza de cero. Retomas la empresa del Avance 1 y construyes la Parte 1 del plan estratégico con los contenidos de las sesiones 6 a 16.</p>
+
+    <div class="grid">
+      <div class="mini">
+        <span class="tag">Lo que sí es</span>
+        <h4>Continuación y cierre</h4>
+        <p>La Parte 1 del trabajo final. Integra el diagnóstico del Avance 1 y lo convierte en estrategia, objetivos, implementación y control.</p>
+      </div>
+      <div class="mini">
+        <span class="tag">Lo que no es</span>
+        <h4>Un proyecto nuevo</h4>
+        <p>No empiezas otra empresa ni repites el Avance 1. Tampoco es un ensayo teórico ni un resumen de la materia.</p>
+      </div>
+      <div class="mini">
+        <span class="tag">Enfoque</span>
+        <h4>Un argumento, no herramientas sueltas</h4>
+        <p>Cada hallazgo del diagnóstico debe justificar un objetivo, cada objetivo una iniciativa y cada iniciativa un indicador.</p>
+      </div>
+      <div class="mini">
+        <span class="tag">Alcance</span>
+        <h4>Nueve capítulos</h4>
+        <p>Del resumen ejecutivo al aprendizaje y la cultura. No se pide la presentación formal de la Parte 2.</p>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:1rem">
+      <div class="fact"><b>Individual</b><span>Cada alumno entrega y defiende su propio trabajo.</span></div>
+      <div class="fact"><b>Misma empresa</b><span>Retomas el proyecto del Avance 1.</span></div>
+      <div class="fact"><b>20 a 30 páginas</b><span>Sin contar portada, índice ni anexos.</span></div>
+      <div class="fact"><b>Tablas y figuras propias</b><span>Canvas, Gantt, matriz y BSC permitidos.</span></div>
+      <div class="fact"><b>60% PDF</b><span>Documento escrito y entregado en Classroom.</span></div>
+      <div class="fact"><b>40% exposición</b><span>Defensa oral en las sesiones 18 y 19.</span></div>
+    </div>
+
+    <div class="note"><b>Si cambias de proyecto:</b> deberás incluir un resumen completo del Avance 1 —empresa, cliente, propuesta de valor, Porter, FODA, VRIO, misión, visión y valores— y justificar el cambio. No se califica un proyecto nuevo sin ese respaldo.</div>
+
+    <h3>De dónde vienes y qué falta</h3>
+    <div class="timeline">
+      <div class="t-item"><span class="date">Sesiones 1 a 5</span><h4>Avance 1</h4><p>Fundamentos, niveles de planeación, Porter y FODA de la industria, análisis interno, VRIO, misión, visión, valores y FODA con CAME.</p></div>
+      <div class="t-item"><span class="date">Sesión 6</span><h4>Los 3 Canvas</h4><p>Producto, servicio y negocio: qué ofreces, cómo lo entregas y cómo generas valor.</p></div>
+      <div class="t-item"><span class="date">Sesión 7</span><h4>Megatendencias y propuesta de valor</h4><p>Tendencias del entorno, propuesta diferenciada y modelo de negocio rentable.</p></div>
+      <div class="t-item"><span class="date">Sesión 9</span><h4>Validación y objetivo formal</h4><p>Pruebas de ajuste, diferenciación, viabilidad y rentabilidad; objetivo con métrica, meta, plazo y responsable.</p></div>
+      <div class="t-item"><span class="date">Sesión 10</span><h4>Objetivos y sub-objetivos</h4><p>Jerarquía de objetivos, metas organizacionales y priorización por perspectiva del Balanced Scorecard.</p></div>
+      <div class="t-item"><span class="date">Sesión 11</span><h4>Gantt y EDT</h4><p>Actividades, responsables, duraciones, dependencias, hitos y ruta crítica.</p></div>
+      <div class="t-item"><span class="date">Sesión 12</span><h4>Implementación y cambio</h4><p>Ejecución, liderazgo, alineación y gestión del cambio con Kotter o ADKAR.</p></div>
+      <div class="t-item"><span class="date">Sesión 13</span><h4>Evaluación e indicadores</h4><p>KPIs, estrategias de medición, Balanced Scorecard y semáforos.</p></div>
+      <div class="t-item"><span class="date">Sesión 14</span><h4>Redefinición y aprendizaje</h4><p>Ajuste al proceso, aprendizaje, comunicación y lecciones aprendidas.</p></div>
+      <div class="t-item"><span class="date">Sesión 15</span><h4>Competencias y cultura</h4><p>Brechas de talento, desarrollo de competencias y cultura alineada a la estrategia.</p></div>
+      <div class="t-item"><span class="date">Sesión 16</span><h4>Integración y entrega</h4><p>Documento completo, matriz de coherencia y exposición breve de avances.</p></div>
+    </div>
+
+    <div class="hook">La pregunta que guía todo: ¿qué haría esta empresa en los próximos 12 a 24 meses para tener la mayor probabilidad de éxito, y cómo lo demostraría con evidencia?</div>
+  </section>
+
+  <!-- ===== 2. ENTREGABLES ===== -->
+  <section class="section" id="entregables">
+    <div class="kicker">02 · Entregables y fechas</div>
+    <h2>Qué entregas y cuándo</h2>
+    <p class="lead">Hay una sola fecha para el documento y una sola oportunidad para exponer. No hay entregas tardías.</p>
+
+    <div class="grid">
+      <div class="mini" style="background:#fff;border-top:3px solid var(--gold)">
+        <span class="tag">Entregable 1 · 60%</span>
+        <h4>Documento PDF</h4>
+        <p><b>20 a 30 páginas</b> sin contar portada, índice ni anexos.<br>
+        <b>Nueve capítulos</b> en el orden indicado, más conclusiones y anexos.<br>
+        <b>Entrega única:</b> 14 de noviembre, 12:00 pm.<br>
+        <b>Classroom.</b> Sin prórroga.<br>
+        <b>Archivo:</b> <code>PE_Final_ApellidoNombre.pdf</code></p>
+      </div>
+      <div class="mini" style="background:#fff;border-top:3px solid var(--gold)">
+        <span class="tag">Entregable 2 · 40%</span>
+        <h4>Exposición oral</h4>
+        <p><b>Sesiones 18 y 19.</b><br>
+        <b>8 a 10 minutos</b> de exposición + 3 minutos de preguntas. La duración es una referencia, no se califica.<br>
+        <b>Apoyo visual:</b> PPT, Canva o PDF. Súbelo a Classroom antes de tu sesión.<br>
+        <b>Individual.</b><br>
+        <b>Archivo:</b> <code>PE_Expo_ApellidoNombre.pdf</code></p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item"><span class="date">26 de octubre</span><h4>Inicio de la actividad</h4><p>Presentación de la guía, los criterios y la fecha de entrega.</p></div>
+      <div class="t-item"><span class="date">14 de noviembre · 12:00 pm</span><h4>Cierre del PDF</h4><p>Entrega en Classroom. El aula se cierra a la hora indicada.</p></div>
+      <div class="t-item"><span class="date">Sesiones 18 y 19</span><h4>Exposición oral</h4><p>Defensa individual del plan frente al grupo.</p></div>
+    </div>
+
+    <div class="warn"><b>Sin excepciones:</b> el aula virtual se cierra a las 12:00 pm del 14 de noviembre. No hay entregas tardías, reenvíos fuera de fecha ni prórrogas.</div>
+    <div class="note"><b>Calificación final:</b> 60% documento + 40% exposición. Cada bloque se evalúa con una rúbrica de 15 puntos y después se convierte a su porcentaje.</div>
+  </section>
+
+  <!-- ===== 3. ESTRUCTURA ===== -->
+  <section class="section" id="estructura">
+    <div class="kicker">03 · Estructura del PDF</div>
+    <h2>Los 9 capítulos del documento</h2>
+    <p class="lead">El documento debe llevar exactamente estos capítulos, en este orden, con portada e índice paginado. Los títulos deben ser claros y numerados.</p>
+
+    <div class="map">
+      <div class="map-row"><span class="m-num">1</span><p><b>Resumen ejecutivo</b> · 1 página<br>Qué es la empresa, cuál es el reto, qué estrategia se propone, qué resultados se esperan y cuánto cuesta.</p></div>
+      <div class="map-row"><span class="m-num">2</span><p><b>Descripción de la empresa</b> · 2 a 3 páginas<br>Giro, sector, tamaño, antigüedad, ubicación, oferta, clientes, modelo de ingresos, estructura y situación actual.</p></div>
+      <div class="map-row"><span class="m-num">3</span><p><b>Análisis del entorno</b> · 3 a 4 páginas<br>PESTEL, cinco fuerzas de Porter, competidores, FODA de la industria y conclusiones del entorno.</p></div>
+      <div class="map-row"><span class="m-num">4</span><p><b>Análisis interno</b> · 3 a 4 páginas<br>Cadena de valor, recursos y capacidades, VRIO, indicadores históricos, FODA de la empresa y ventaja competitiva.</p></div>
+      <div class="map-row"><span class="m-num">5</span><p><b>Modelo de negocio y propuesta de valor</b> · 3 a 4 páginas<br>Los tres Canvas, propuesta de valor, segmentos y megatendencias que afectan al sector.</p></div>
+      <div class="map-row"><span class="m-num">6</span><p><b>Estrategia y objetivos</b> · 3 a 4 páginas<br>Misión, visión y valores revisados; estrategia competitiva; validación; objetivo formal; objetivos estratégicos y sub-objetivos.</p></div>
+      <div class="map-row"><span class="m-num">7</span><p><b>Plan de implementación</b> · 3 a 4 páginas<br>Iniciativas, responsables, recursos y presupuesto, Gantt, riesgos y mitigación, gestión del cambio.</p></div>
+      <div class="map-row"><span class="m-num">8</span><p><b>Evaluación y control</b> · 2 a 3 páginas<br>KPIs, metas, Balanced Scorecard, frecuencia de revisión, semáforos y reglas de ajuste.</p></div>
+      <div class="map-row"><span class="m-num">9</span><p><b>Aprendizaje, competencias y cultura</b> · 2 a 3 páginas<br>Plan de comunicación, desarrollo de competencias, ajustes a la cultura y lecciones aprendidas.</p></div>
+      <div class="map-row"><span class="m-num">+</span><p><b>Conclusiones y anexos</b> · 1 a 2 páginas<br>Síntesis, limitaciones, recomendaciones y evidencia: encuestas, entrevistas, datos, cálculos y lienzos.</p></div>
+    </div>
+
+    <div class="note"><b>Integración del Avance 1:</b> los capítulos 2, 3 y 4 ya los trabajaste en el Avance 1. No los copies tal cual: actualízalos, corrige lo que el profesor señaló y asegúrate de que sus conclusiones alimenten la estrategia. Los capítulos 5 al 9 son el contenido nuevo de las sesiones 6 a 15.</div>
+
+    <div class="note"><b>Extensión total:</b> 20 a 30 páginas sin contar portada, índice ni anexos. Si un capítulo queda corto, no lo rellenes con teoría: agrega evidencia, decisiones, cifras o riesgos concretos.</div>
+
+    <h3>Qué debe responder cada capítulo</h3>
+    <div class="grid">
+      <div class="mini"><h4>1. Resumen ejecutivo</h4><p>¿Qué empresa es, qué oportunidad detectó y qué plan la aprovechará? ¿Cuánto cuesta y qué resultados promete?</p></div>
+      <div class="mini"><h4>2. Empresa y situación actual</h4><p>¿A quién sirve, cómo gana dinero y qué problemas enfrenta hoy?</p></div>
+      <div class="mini"><h4>3. Entorno</h4><p>¿Qué factores externos la afectan y qué tan atractiva es la industria?</p></div>
+      <div class="mini"><h4>4. Análisis interno</h4><p>¿Dónde genera ventaja competitiva y qué capacidades le faltan?</p></div>
+      <div class="mini"><h4>5. Modelo de negocio</h4><p>¿Qué ofrece, cómo lo entrega, cuánto cobra y por qué el cliente la elegiría?</p></div>
+      <div class="mini"><h4>6. Estrategia y objetivos</h4><p>¿Qué posición competitiva elige y qué objetivos medibles se derivan del diagnóstico?</p></div>
+      <div class="mini"><h4>7. Implementación</h4><p>¿Quién hace qué, cuándo, con qué recursos y qué puede fallar?</p></div>
+      <div class="mini"><h4>8. Control</h4><p>¿Qué indicadores demuestran avance y con qué rutina se revisan?</p></div>
+      <div class="mini"><h4>9. Aprendizaje y cultura</h4><p>¿Qué competencias y comportamientos necesita la estrategia para sostenerse?</p></div>
+    </div>
+  </section>
+
+  <!-- ===== 4. CÓMO ESCRIBIR ===== -->
+  <section class="section" id="escritura">
+    <div class="kicker">04 · Cómo escribir</div>
+    <h2>La fórmula de cada capítulo</h2>
+    <p class="lead">Para que el plan no se quede en buenas intenciones, cada capítulo del 3 al 9 debe seguir esta secuencia.</p>
+
+    <div class="pills">
+      <span class="pill">Hallazgo con evidencia</span>
+      <span class="pill">Decisión</span>
+      <span class="pill">3 a 5 acciones</span>
+      <span class="pill">Responsable y recursos</span>
+      <span class="pill">Indicador</span>
+      <span class="pill">Riesgo y mitigación</span>
+    </div>
+
+    <div class="grid">
+      <div class="mini"><h4>Hallazgo con evidencia</h4><p>¿Qué encontró el diagnóstico? Un dato, una cita, un cálculo o un hecho verificable.</p></div>
+      <div class="mini"><h4>Decisión</h4><p>¿Qué harás al respecto? Enuncia la decisión en una frase clara y justifica por qué.</p></div>
+      <div class="mini"><h4>Acciones</h4><p>¿Cómo lo harás? De 3 a 5 acciones concretas, no una lista de deseos.</p></div>
+      <div class="mini"><h4>Responsable y recursos</h4><p>¿Quién lo ejecuta y con qué dinero, tiempo, herramientas o aliados?</p></div>
+      <div class="mini"><h4>Indicador</h4><p>¿Cómo sabrás que funcionó? Fórmula, línea base, meta y frecuencia de medición.</p></div>
+      <div class="mini"><h4>Riesgo y mitigación</h4><p>¿Qué puede fallar y qué harás para prevenirlo o reducir el impacto?</p></div>
+    </div>
+
+    <div class="formula">
+      <div class="fp">Prueba de coherencia</div>
+      <code>Hallazgo → Objetivo → Iniciativa → Indicador → Responsable</code>
+      <small>Si una fila queda vacía o desconectada, el plan tiene una falla estructural.</small>
+    </div>
+
+    <div class="gold-box">
+      <b>Ejemplo aplicado:</b> «Hallazgo: la demanda de productos naturales crece, pero el margen se reduce por el costo de distribución y la empresa no tiene canal digital. Decisión: diferenciación por origen natural y trazabilidad, con canal digital propio y alianzas con cafeterías y hoteles. Objetivo formal: elevar la participación de ingresos del canal digital del 5% al 20% en 18 meses. Iniciativas: tienda en línea, rediseño de empaque con certificaciones, ruta de distribución compartida y capacitación comercial. Indicadores: ventas digitales, costo logístico por pedido, margen por canal, recompra y tiempo de entrega. Riesgo: retrasos logísticos; mitigación: contrato con operador 3PL y seguimiento semanal».
+    </div>
+
+    <h3>Cifras estimadas, pero reales</h3>
+    <ul>
+      <li><b>No inventes precisión.</b> Si no tienes un dato exacto, usa un rango y explica el supuesto.</li>
+      <li><b>Parte de una referencia:</b> una cotización, un precio de mercado, un porcentaje de ventas o un costo unitario.</li>
+      <li><b>Muestra el cálculo:</b> «$450 de ticket × 120 pedidos = $54,000 al mes» es mejor que «venderemos mucho».</li>
+      <li><b>Cita la fuente y el año:</b> INEGI, Secretaría de Economía, estados financieros, entrevistas o datos de la empresa.</li>
+      <li><b>Redondea:</b> en una planeación académica, un rango creíble vale más que una cifra falsa con decimales.</li>
+    </ul>
+
+    <div class="note"><b>Regla de una frase:</b> si no puedes explicar una acción en una sola frase, todavía no está lista. Si necesitas tres párrafos para justificar una decisión, probablemente no la tienes clara.</div>
+  </section>
+
+  <!-- ===== 5. FORMATO ===== -->
+  <section class="section" id="formato">
+    <div class="kicker">05 · Formato</div>
+    <h2>Un documento profesional, sin adornos</h2>
+    <p class="lead">El formato es sencillo a propósito: lo importante es el contenido. Estos requisitos son obligatorios y se revisan antes de calificar.</p>
+
+    <div class="grid">
+      <div class="fact"><b>Tamaño</b><span>Carta.</span></div>
+      <div class="fact"><b>Márgenes</b><span>2.5 cm en los cuatro lados.</span></div>
+      <div class="fact"><b>Fuente</b><span>Arial o Calibri, 12 pt.</span></div>
+      <div class="fact"><b>Interlineado</b><span>1.5.</span></div>
+      <div class="fact"><b>Alineación</b><span>Texto justificado.</span></div>
+      <div class="fact"><b>Títulos</b><span>14 pt, negritas, numerados.</span></div>
+      <div class="fact"><b>Subtítulos</b><span>12 pt, negritas.</span></div>
+      <div class="fact"><b>Paginado</b><span>Inferior derecho.</span></div>
+      <div class="fact"><b>Referencias</b><span>APA 7, mínimo 3 fuentes.</span></div>
+      <div class="fact"><b>Archivo</b><span><code>PE_Final_ApellidoNombre.pdf</code></span></div>
+    </div>
+
+    <h3>Permitido y no permitido</h3>
+    <div class="grid">
+      <div class="mini" style="border-top:3px solid var(--gold)">
+        <h4>Permitido</h4>
+        <p>Párrafos, viñetas, subtítulos, negritas, cursivas, citas textuales y listas numeradas. Tablas y figuras propias cuando sean evidencia del plan: los tres Canvas, el Gantt, la matriz de coherencia, el Balanced Scorecard o cálculos. Deben ir numeradas, tituladas y explicadas en el texto.</p>
+      </div>
+      <div class="mini" style="border-top:3px solid var(--muted-red)">
+        <h4>No permitido</h4>
+        <p>Capturas de pantalla, imágenes decorativas, gráficos sin fuente, texto en color, portadas diseñadas, elementos multimedia o tablas que sustituyan la explicación escrita. La tabla no reemplaza al argumento.</p>
+      </div>
+    </div>
+
+    <h3>Portada</h3>
+    <ul>
+      <li>Universidad: UNICEBA.</li>
+      <li>Materia: Planeación Estratégica · IGI738.</li>
+      <li>Título del trabajo: Plan Estratégico Empresarial (Parte 1).</li>
+      <li>Nombre completo del alumno.</li>
+      <li>Matrícula y grupo.</li>
+      <li>Nombre del profesor: Ing. Rodolfo Ramírez López.</li>
+      <li>Fecha de entrega: 14 de noviembre de 2026.</li>
+      <li>Índice paginado después de la portada.</li>
+    </ul>
+
+    <div class="warn"><b>Penalización:</b> el incumplimiento grave del formato —extensión, tipografía, justificado, portada, índice, APA, tablas sin numerar o capturas— descuenta hasta 3 puntos del total del PDF, sin modificar los 5 criterios de contenido.</div>
+
+    <div class="note"><b>Uso de IA:</b> se permite como apoyo, pero el texto debe conservar voz propia, ejemplos específicos y decisiones justificadas con datos del proyecto. Un documento predominantemente generado por IA, sin adaptación, se penaliza dentro de la calidad del documento.</div>
+  </section>
+
+  <!-- ===== 6. RÚBRICA PDF ===== -->
+  <section class="section" id="rubrica-pdf">
+    <div class="kicker">06 · Rúbrica del PDF</div>
+    <h2>5 criterios, 3 niveles, 15 puntos</h2>
+    <p class="lead">Cada criterio se califica con un solo nivel: 1, 2 o 3. No se promedian niveles ni se suman elementos de distintos niveles. El evaluador asigna el nivel más alto que se cumpla completamente.</p>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">1</span>
+        <div><h4>Diagnóstico externo e interno</h4><p>Qué evalúa: que el Avance 1 esté integrado, actualizado y sustentado con evidencia.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Integra PESTEL con implicaciones, las cinco fuerzas calificadas como alta, media o baja con argumento, FODA de la industria, cadena de valor, VRIO y FODA de la empresa con evidencia y cruces CAME; las conclusiones alimentan con claridad la estrategia.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Integra la mayoría de los elementos, pero omite uno o presenta análisis descriptivo sin conclusiones; la evidencia es parcial.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>El diagnóstico es incompleto, genérico o sin evidencia; no se conecta con la estrategia.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">2</span>
+        <div><h4>Modelo de negocio y propuesta de valor</h4><p>Qué evalúa: que los tres Canvas y la propuesta de valor sean coherentes con el diagnóstico.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Presenta los tres Canvas completos y coherentes con el diagnóstico; la propuesta de valor explica a quién sirve, qué resuelve, por qué es mejor y con qué evidencia; incluye 3 a 5 megatendencias con impacto concreto en el sector.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Presenta los Canvas con omisiones o la propuesta de valor es genérica; menciona megatendencias sin traducirlas en impacto.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>No presenta los Canvas o la propuesta de valor; el modelo de negocio no se conecta con la estrategia.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">3</span>
+        <div><h4>Estrategia y objetivos</h4><p>Qué evalúa: que la estrategia esté validada y que los objetivos sean medibles y derivados del diagnóstico.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Valida la estrategia con las cuatro pruebas (ajuste, diferenciación, viabilidad y rentabilidad), define una posición competitiva clara, redacta un objetivo formal con verbo, métrica, meta, plazo y responsable, y deriva 3 a 5 objetivos estratégicos con sub-objetivos medibles, clasificados por perspectiva del Balanced Scorecard y vinculados a un hallazgo.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>La estrategia y los objetivos existen, pero falta una prueba, una métrica, un plazo o un responsable; el vínculo con el diagnóstico es parcial.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>No valida la estrategia o los objetivos carecen de métrica, plazo o responsable; no se derivan del diagnóstico.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">4</span>
+        <div><h4>Plan de implementación</h4><p>Qué evalúa: que las iniciativas, el Gantt, el presupuesto, los riesgos y el cambio sean ejecutables.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Define iniciativas con responsable, fechas, recursos y entregable; el Gantt muestra dependencias, hitos y ruta crítica; el presupuesto está vinculado a las iniciativas; los riesgos tienen probabilidad, impacto, mitigación y responsable; la gestión del cambio (Kotter o ADKAR) está articulada con el plan.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Presenta iniciativas y Gantt, pero omite presupuesto, dependencias, riesgos o gestión del cambio.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Enumera actividades sin responsables, fechas ni recursos; no hay Gantt ni análisis de riesgos.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">5</span>
+        <div><h4>Evaluación, control, aprendizaje y cultura</h4><p>Qué evalúa: que exista un sistema de medición, ajuste y sostenibilidad del plan.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Propone KPIs con fórmula, fuente, frecuencia, línea base, meta y responsable; Balanced Scorecard con las cuatro perspectivas, semáforos y relación causa-efecto; rutinas de revisión mensual y trimestral con reglas de ajuste; plan de comunicación, desarrollo de competencias y cultura alineada a la estrategia.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Incluye indicadores o Balanced Scorecard, pero incompletos; las rutinas de revisión o el plan de aprendizaje y cultura son superficiales.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Presenta indicadores genéricos sin línea base ni meta; no hay rutinas de revisión ni plan de aprendizaje o cultura.</p></div>
+      </div>
+    </div>
+
+    <div class="note"><b>Referencia de peso:</b> diagnóstico 20%, modelo de negocio 15%, estrategia y objetivos 20%, implementación 20%, control y aprendizaje 15%. El 10% restante corresponde a la calidad del documento y se revisa con el formato. La rúbrica de contenido suma 15 puntos.</div>
+  </section>
+
+  <!-- ===== 7. EXPOSICIÓN ===== -->
+  <section class="section" id="expo">
+    <div class="kicker">07 · Exposición</div>
+    <h2>Defiende tu plan en 5 bloques</h2>
+    <p class="lead">La exposición vale 40%. No se evalúa el diseño de las diapositivas ni el reloj: se evalúa tu dominio del plan, la coherencia y la claridad de tus decisiones.</p>
+
+    <div class="grid">
+      <div class="fact"><b>40%</b><span>De la calificación de la actividad.</span></div>
+      <div class="fact"><b>Individual</b><span>Cada alumno defiende su proyecto.</span></div>
+      <div class="fact"><b>Sesiones 18 y 19</b><span>Fecha de la exposición oral.</span></div>
+      <div class="fact"><b>8 a 10 min</b><span>Más 3 minutos de preguntas. La duración no se califica.</span></div>
+    </div>
+
+    <h3>Guion sugerido</h3>
+    <div class="map">
+      <div class="map-row"><span class="m-num">1</span><p><b>Apertura · 30 a 60 segundos</b><br>Nombre, empresa y objetivo de la exposición. Una frase que resuma la propuesta de valor.</p></div>
+      <div class="map-row"><span class="m-num">2</span><p><b>Diagnóstico y Avance 1 · 1 a 2 minutos</b><br>El hallazgo principal del entorno y del análisis interno, la ventaja competitiva y lo que cambió respecto al Avance 1.</p></div>
+      <div class="map-row"><span class="m-num">3</span><p><b>Modelo de negocio y propuesta de valor · 1 a 2 minutos</b><br>Qué ofrece, cómo lo entrega, cómo gana dinero y por qué el cliente la elegiría. Menciona los tres Canvas sin leerlos.</p></div>
+      <div class="map-row"><span class="m-num">4</span><p><b>Estrategia e implementación · 3 a 4 minutos</b><br>Validación, posición competitiva, objetivo formal, objetivos estratégicos, iniciativas, Gantt, presupuesto, riesgos y gestión del cambio. Explica las decisiones, no solo las actividades.</p></div>
+      <div class="map-row"><span class="m-num">5</span><p><b>Indicadores y cierre · 1 a 2 minutos</b><br>Dos cifras, un KPI con meta, un riesgo con mitigación y la conclusión: qué debe pasar para considerar el plan exitoso.</p></div>
+    </div>
+
+    <h3>Qué llevar preparado</h3>
+    <ul>
+      <li><b>Dos cifras</b> del plan: presupuesto, ventas, margen, inversión o ahorro estimado.</li>
+      <li><b>Un KPI</b> con línea base, meta y frecuencia de medición.</li>
+      <li><b>Un riesgo</b> real y su mecanismo de mitigación.</li>
+      <li><b>Tres decisiones</b> que puedas justificar con una razón y una evidencia.</li>
+      <li><b>Dos preguntas difíciles</b> que anticipes, con una respuesta breve y honesta.</li>
+    </ul>
+
+    <div class="note"><b>No se evalúa:</b> el número exacto de diapositivas, el diseño visual, el tiempo exacto ni la cantidad de palabras. Se evalúa lo que sabes, lo que decides y lo que puedes defender.</div>
+
+    <div class="hook">Si no puedes explicar una decisión sin leer la diapositiva, todavía no la dominas.</div>
+  </section>
+
+  <!-- ===== 8. RÚBRICA EXPO ===== -->
+  <section class="section" id="rubrica-expo">
+    <div class="kicker">08 · Rúbrica de la exposición</div>
+    <h2>5 criterios, 3 niveles, 15 puntos</h2>
+    <p class="lead">Igual que el PDF: un solo nivel por criterio. La duración no es un criterio de calificación.</p>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">1</span>
+        <div><h4>Dominio del plan</h4><p>Qué evalúa: que expliques el plan con tus palabras y sin depender del documento.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Explica el plan con sus propias palabras, sin leer; responde preguntas sin consultar el PDF; conecta cada acción con su resultado esperado.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Explica la mayor parte con sus palabras, pero lee o consulta el PDF en ocasiones; conecta algunas acciones con resultados.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Lee la mayor parte o depende del PDF; enumera acciones sin explicar cómo llevan a resultados.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">2</span>
+        <div><h4>Coherencia interna de la exposición</h4><p>Qué evalúa: que el relato tenga un hilo lógico de principio a fin.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>El objetivo inicial se retoma y cierra en la conclusión; todos los bloques sostienen la idea central; no hay contradicciones.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>El objetivo se cierra parcialmente; un bloque se desconecta o hay una contradicción menor.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>La conclusión no corresponde al objetivo; los bloques están desconectados o hay contradicciones claras.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">3</span>
+        <div><h4>Coherencia entre el PDF y la exposición</h4><p>Qué evalúa: que lo que dices coincida con lo que entregaste.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Todas las cifras, acciones, KPI, riesgo, propuesta de valor y plan de implementación mencionados coinciden con el PDF.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>La mayoría coincide; hay una discrepancia u omisión que no cambia el plan.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Hay dos o más discrepancias, o la exposición presenta un plan distinto al PDF.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">4</span>
+        <div><h4>Cobertura de puntos clave</h4><p>Qué evalúa: que no falte ninguno de los elementos esenciales del plan.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Cubre los 5 bloques y menciona problema, cliente, propuesta de valor, ventaja competitiva, al menos 2 acciones, 1 cifra de presupuesto, 1 KPI y 1 riesgo.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Cubre los 5 bloques, pero omite 2 o 3 de los elementos clave.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Omite uno o más bloques y 4 o más elementos clave.</p></div>
+      </div>
+    </div>
+
+    <div class="rubric-card">
+      <div class="rubric-head">
+        <span class="rubric-num">5</span>
+        <div><h4>Argumentación y respuestas</h4><p>Qué evalúa: que justifiques tus decisiones y respondas con evidencia.</p></div>
+        <span class="rubric-pts">3 pts</span>
+      </div>
+      <div class="levels">
+        <div class="level l3"><span class="lv">3 · Óptimo</span><p>Justifica las 3 decisiones principales con razones y evidencia; responde al menos 2 preguntas con datos del proyecto; reconoce 1 limitación y propone mitigación.</p></div>
+        <div class="level l2"><span class="lv">2 · Aceptable</span><p>Justifica 1 o 2 decisiones con razones débiles; responde 1 pregunta con evidencia; reconoce una limitación sin mitigación.</p></div>
+        <div class="level l1"><span class="lv">1 · Insuficiente</span><p>Afirma las decisiones sin justificarlas; responde con generalidades; no reconoce limitaciones.</p></div>
+      </div>
+    </div>
+
+    <div class="note"><b>Total de la exposición:</b> 15 puntos. La duración sugerida es de 8 a 10 minutos, pero no se califica.</div>
+  </section>
+
+  <!-- ===== 9. CALIFICACIÓN ===== -->
+  <section class="section" id="calificacion">
+    <div class="kicker">09 · Cómo se califica</div>
+    <h2>La fórmula y las reglas</h2>
+    <p class="lead">Las dos rúbricas suman 30 puntos, pero la actividad se califica sobre 100. Cada bloque se convierte a su peso: 60% el PDF y 40% la exposición.</p>
+
+    <div class="formula">
+      <div class="fp">Calificación final</div>
+      <code>(PDF ÷ 15 × 60) + (Exposición ÷ 15 × 40)</code>
+      <small>Ejemplo: PDF 12/15 y exposición 13/15 → (12/15 × 60) + (13/15 × 40) = 48 + 34.67 = 82.67</small>
+    </div>
+
+    <h3>Reglas fijas para el evaluador</h3>
+    <ol>
+      <li><b>Evalúa cada criterio por separado.</b> No mezcles criterios ni sumes puntos parciales dentro de un mismo criterio.</li>
+      <li><b>Asigna el nivel más alto que se cumpla completamente.</b> Si cumple parcialmente el nivel 3, asigna 2; si cumple parcialmente el 2, asigna 1.</li>
+      <li><b>Si no hay evidencia suficiente, asigna 1.</b> La ausencia de información no se interpreta como cumplimiento.</li>
+      <li><b>No promedies niveles.</b> Elige un solo nivel por criterio: 1, 2 o 3.</li>
+      <li><b>Cita la evidencia.</b> Para el PDF, indica el capítulo o el fragmento; para la exposición, el momento o la frase que sustenta la calificación.</li>
+      <li><b>Revisa primero el formato y la coherencia.</b> Si hay incumplimiento grave, aplica hasta 3 puntos de penalización. Si la matriz de coherencia tiene filas vacías, el plan pierde consistencia.</li>
+      <li><b>Calcula con la fórmula.</b> PDF y exposición se evalúan por separado y luego se ponderan.</li>
+    </ol>
+
+    <h3>Errores que más cuestan puntos</h3>
+    <ul>
+      <li><b>Describir la teoría en lugar de aplicarla</b> a la empresa del proyecto.</li>
+      <li><b>FODA con opiniones sin evidencia</b> y cruces CAME inexistentes.</li>
+      <li><b>Objetivos sin métrica, plazo o responsable.</b></li>
+      <li><b>Estrategia que no se deriva del diagnóstico:</b> coherencia rota.</li>
+      <li><b>Presupuesto ausente o desconectado</b> de las iniciativas.</li>
+      <li><b>Indicadores que no miden</b> lo que la estrategia promete.</li>
+      <li><b>Gantt sin dependencias ni responsables,</b> o con todo en paralelo.</li>
+      <li><b>Ignorar riesgos y gestión del cambio.</b></li>
+      <li><b>Copiar un plan de otra empresa o de internet.</b></li>
+      <li><b>Uso excesivo de IA sin adaptación:</b> texto homogéneo, sin ejemplos, cifras ni decisiones propias.</li>
+      <li><b>Formato descuidado:</b> portada incompleta, sin índice, texto no justificado, tablas sin numerar o capturas prohibidas.</li>
+      <li><b>Entrega tardía:</b> el aula se cierra a las 12:00 pm; no hay excepciones.</li>
+    </ul>
+  </section>
+
+  <!-- ===== 10. CHECKLIST ===== -->
+  <section class="section" id="checklist">
+    <div class="kicker">10 · Checklist final</div>
+    <h2>Antes de entregar</h2>
+    <p class="lead">Marca cada punto. Si algo queda sin marcar, todavía no está listo.</p>
+
+    <h3>Documento PDF</h3>
+    <div class="checklist">
+      <label class="check"><input type="checkbox"><span>La portada tiene universidad, materia, título, nombre, matrícula, grupo, profesor y fecha.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay índice paginado después de la portada.</span></label>
+      <label class="check"><input type="checkbox"><span>Están los 9 capítulos, en orden y con títulos numerados, más conclusiones y anexos.</span></label>
+      <label class="check"><input type="checkbox"><span>El documento tiene entre 20 y 30 páginas sin contar portada, índice ni anexos.</span></label>
+      <label class="check"><input type="checkbox"><span>El capítulo 2, 3 y 4 integran y actualizan el Avance 1; no son una copia sin correcciones.</span></label>
+      <label class="check"><input type="checkbox"><span>El PESTEL tiene implicaciones para la empresa y las cinco fuerzas están calificadas como alta, media o baja con argumento.</span></label>
+      <label class="check"><input type="checkbox"><span>El FODA de la empresa tiene evidencia y cruces FO, FA, DO y DA; el VRIO evalúa los cuatro criterios.</span></label>
+      <label class="check"><input type="checkbox"><span>Están los tres Canvas: producto, servicio y negocio, y la propuesta de valor explica a quién sirve, qué resuelve y por qué es mejor.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay 3 a 5 megatendencias con impacto concreto en el sector.</span></label>
+      <label class="check"><input type="checkbox"><span>La estrategia está validada con las cuatro pruebas: ajuste, diferenciación, viabilidad y rentabilidad.</span></label>
+      <label class="check"><input type="checkbox"><span>El objetivo formal tiene verbo, métrica, meta, plazo y responsable.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay 3 a 5 objetivos estratégicos con sub-objetivos medibles y clasificados por perspectiva del Balanced Scorecard.</span></label>
+      <label class="check"><input type="checkbox"><span>Cada iniciativa tiene responsable, fecha, recursos y entregable.</span></label>
+      <label class="check"><input type="checkbox"><span>El Gantt muestra dependencias, hitos y ruta crítica.</span></label>
+      <label class="check"><input type="checkbox"><span>El presupuesto está vinculado a las iniciativas y explica el cálculo.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay riesgos con probabilidad, impacto, mitigación y responsable, y un plan de gestión del cambio.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay KPIs con fórmula, fuente, frecuencia, línea base, meta y responsable.</span></label>
+      <label class="check"><input type="checkbox"><span>El Balanced Scorecard tiene las cuatro perspectivas, semáforos y relación causa-efecto.</span></label>
+      <label class="check"><input type="checkbox"><span>Hay rutinas de revisión mensual y trimestral con reglas de ajuste.</span></label>
+      <label class="check"><input type="checkbox"><span>El capítulo 9 incluye comunicación, competencias, cultura y lecciones aprendidas.</span></label>
+      <label class="check"><input type="checkbox"><span>La matriz de coherencia está completa: hallazgo, objetivo, iniciativa, indicador y responsable.</span></label>
+      <label class="check"><input type="checkbox"><span>Las referencias están en APA 7 y hay mínimo 3 fuentes académicas o institucionales.</span></label>
+      <label class="check"><input type="checkbox"><span>El texto tiene voz propia, ejemplos, cifras y decisiones específicas; no parece generado por IA sin adaptación.</span></label>
+      <label class="check"><input type="checkbox"><span>El texto está justificado, Arial o Calibri 12, interlineado 1.5 y márgenes de 2.5 cm.</span></label>
+      <label class="check"><input type="checkbox"><span>Las tablas y figuras están numeradas, tituladas, explicadas y con fuente; no hay capturas ni imágenes decorativas.</span></label>
+      <label class="check"><input type="checkbox"><span>El archivo se llama <b>PE_Final_ApellidoNombre.pdf</b> y está en Classroom antes de las 12:00 pm del 14 de noviembre.</span></label>
+    </div>
+
+    <h3>Exposición</h3>
+    <div class="checklist">
+      <label class="check"><input type="checkbox"><span>La presentación cubre los 5 bloques: apertura, diagnóstico/Avance 1, modelo de negocio, estrategia e implementación, e indicadores/cierre.</span></label>
+      <label class="check"><input type="checkbox"><span>Puedo explicar el plan sin leer las diapositivas.</span></label>
+      <label class="check"><input type="checkbox"><span>Llevo 2 cifras, 1 KPI, 1 riesgo y 1 mitigación memorizados.</span></label>
+      <label class="check"><input type="checkbox"><span>Puedo justificar las 3 decisiones principales con una razón y una evidencia.</span></label>
+      <label class="check"><input type="checkbox"><span>Preparé respuestas para 2 preguntas difíciles.</span></label>
+      <label class="check"><input type="checkbox"><span>Subí el apoyo visual a Classroom antes de mi sesión.</span></label>
+      <label class="check"><input type="checkbox"><span>Ensayé al menos dos veces en voz alta.</span></label>
+    </div>
+
+    <div class="gold-box" style="margin-top:1.2rem">
+      <b>Prueba de las tres frases.</b> Si puedes completar estas tres oraciones sin mirar tus apuntes, tu plan está claro:<br><br>
+      1. Mi empresa resuelve <b>________</b> para <b>________</b>.<br>
+      2. La estrategia que propongo es <b>________</b> porque <b>________</b>.<br>
+      3. El indicador que probará el éxito es <b>________</b>.
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  UNICEBA · Licenciatura en Negocios Internacionales · Planeación Estratégica · Ing. Rodolfo Ramírez
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+<script>
+(function(){
+  var progress = document.getElementById('progress');
+  var toTop = document.getElementById('toTop');
+
+  function onScroll(){
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+    progress.style.width = pct + '%';
+    if(doc.scrollTop > 600){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
